@@ -1,0 +1,92 @@
+.wrap {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.subtitle {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.form {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.field span {
+  font-weight: 700;
+}
+
+.field input {
+  border: 1px solid var(--border);
+  background: var(--panel2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  color: var(--text);
+}
+
+.submit {
+  margin-top: 2px;
+}
+
+.error {
+  color: #ff8080;
+  background: rgba(255, 128, 128, 0.1);
+  border: 1px solid rgba(255, 128, 128, 0.25);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.smallRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.note {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 11px;
+  line-height: 1.4;
+}
+

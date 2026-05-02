@@ -1,0 +1,216 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #f1f5f9;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.h1 {
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.sub {
+  margin-top: 4px;
+  color: #a7a7a7;
+  font-size: 13px;
+}
+
+.bookBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  font-size: 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111111;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.statIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+}
+
+.blue {
+  color: #2f8dff;
+  background: rgba(47, 141, 255, 0.12);
+  border-color: rgba(47, 141, 255, 0.25);
+}
+
+.green {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+.orange {
+  color: #ff9800;
+  background: rgba(255, 152, 0, 0.12);
+  border-color: rgba(255, 152, 0, 0.25);
+}
+
+.statValue {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.statHint {
+  margin-top: 4px;
+  color: #9a9a9a;
+  font-size: 12px;
+}
+
+.tableWrap {
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.table th {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 700;
+  background: var(--panel2);
+  position: sticky;
+  top: 0;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+}
+
+.adminSelect {
+  border-radius: 10px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  background: var(--panel2);
+  color: var(--text);
+  font-weight: 900;
+  font-size: 12px;
+  outline: none;
+}
+
+.adminSelect:focus {
+  border-color: rgba(99, 102, 241, 0.6);
+}
+
+.pending {
+  color: #ff9800;
+  border-color: rgba(255, 152, 0, 0.35);
+  background: rgba(255, 152, 0, 0.12);
+}
+
+.confirmed {
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.35);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--panel1);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  color: var(--text);
+}
+
+.modal h3 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel2);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+}
+
+.modal input:focus,
+.modal select:focus {
+  border-color: rgba(99, 102, 241, 0.6);
+}
+
+.modalActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+@media (max-width: 1100px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
