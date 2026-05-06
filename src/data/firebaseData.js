@@ -10,6 +10,32 @@ import {
   getPaymentStats
 } from '../firebase/services/firestoreService';
 
+// Debug: Check if services are properly imported
+console.log('Imported services in firebaseData.js:');
+console.log('userService:', userService);
+console.log('apartmentService:', apartmentService);
+console.log('paymentService:', paymentService);
+console.log('maintenanceService:', maintenanceService);
+
+// Check if services have the required methods
+if (userService && typeof userService.getAll === 'function') {
+  console.log('userService.getAll method exists');
+} else {
+  console.error('userService.getAll method missing!');
+}
+
+if (apartmentService && typeof apartmentService.getAll === 'function') {
+  console.log('apartmentService.getAll method exists');
+} else {
+  console.error('apartmentService.getAll method missing!');
+}
+
+if (paymentService && typeof paymentService.getAll === 'function') {
+  console.log('paymentService.getAll method exists');
+} else {
+  console.error('paymentService.getAll method missing!');
+}
+
 // Mock data for fallback
 export const property = {
   name: 'Lakeside Apartments',

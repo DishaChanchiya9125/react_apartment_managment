@@ -16,10 +16,25 @@ import {
 } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
+// Debug: Check if database is initialized
+console.log('Firestore database initialized:', db);
+if (!db) {
+  console.error('Firestore database not initialized!');
+}
+
 // Generic CRUD operations
 export class FirestoreService {
   constructor(collectionName) {
-    this.collection = collection(db, collectionName);
+    if (!db) {
+      throw new Error('Firestore database not initialized. Check Firebase configuration.');
+    }
+    try {
+      this.collection = collection(db, collectionName);
+      console.log(`FirestoreService initialized for collection: ${collectionName}`);
+    } catch (error) {
+      console.error(`Error initializing FirestoreService for ${collectionName}:`, error);
+      throw error;
+    }
   }
 
   // Create document
@@ -255,3 +270,15 @@ export const getPaymentStats = async (userId = null, userRole = 'user') => {
     return { paid: 0, pending: 0, overdue: 0 };
   }
 };
+
+// Test service initialization
+console.log('Testing service initialization...');
+try {
+  console.log('userService:', userService);
+  console.log('apartmentService:', apartmentService);
+  console.log('paymentService:', paymentService);
+  console.log('maintenanceService:', maintenanceService);
+  console.log('All services initialized successfully');
+} catch (error) {
+  console.error('Service initialization failed:', error);
+}
